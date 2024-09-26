@@ -6,6 +6,11 @@ public class DragAndDrop : MonoBehaviour
 {
     bool isDragging = false;
     public float followSpeed;
+
+    void Start(){
+        float scaleFactor = Random.Range(-0.05f, 0.05f);
+        transform.localScale = new Vector3(transform.localScale.x + scaleFactor, transform.localScale.y + scaleFactor, 1);
+    }
     
     void Update()
     {
