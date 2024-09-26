@@ -14,7 +14,8 @@ public class DragAndDrop : MonoBehaviour
             Vector3 cameraPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector3 target = new Vector3(cameraPos.x, cameraPos.y, 0);
             Vector3 dir = target - transform.position;
-            rb.MovePosition(transform.position + (dir * followSpeed * Time.deltaTime));
+            Vector3 velToAdd = (dir * followSpeed * Time.deltaTime);
+            rb.AddForce(new Vector2(velToAdd.x, velToAdd.y), ForceMode2D.Impulse);
             //rb.gravityScale = 0f;
         } else {
             //rb.gravityScale = 0.025f;

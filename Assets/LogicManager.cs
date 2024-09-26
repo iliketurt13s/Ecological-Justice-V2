@@ -19,6 +19,6 @@ public class LogicManager : MonoBehaviour
     }
 
     void Update(){
-        if (scoreText != null && !gameOver){scoreText.text = (score.ToString());}
+        if (scoreText != null && !gameOver && score > 0){scoreText.text = (score.ToString());}
     }
 }
