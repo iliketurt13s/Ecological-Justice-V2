@@ -7,6 +7,7 @@ public class WasteSpawner : MonoBehaviour
     public GameObject[] waste;
     public float spawnCooldownStart;
     float spawnCooldown;
+    public LogicManager lm;
     
     void Start()
     {
@@ -16,7 +17,10 @@ public class WasteSpawner : MonoBehaviour
 
     void spawn()
     {
-        Instantiate(waste[Random.Range(0, waste.Length)], new Vector3(Random.Range(-8f, 8f), 7f, 0f), Quaternion.identity);
-        Invoke("spawn", spawnCooldown);
+        if (!lm.gameOver){
+            Instantiate(waste[Random.Range(0, waste.Length)], new Vector3(Random.Range(-8f, 8f), 7f, 0f), Quaternion.identity);
+            if (spawnCooldown > 0.5) spawnCooldown -= 0.015f;
+            Invoke("spawn", spawnCooldown);
+        }
     }
 }

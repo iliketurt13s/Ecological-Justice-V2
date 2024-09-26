@@ -7,7 +7,7 @@ public class LogicManager : MonoBehaviour
 {
     public float score;
     public TMP_Text scoreText;
-    bool gameOver = false;
+    [HideInInspector] public bool gameOver = false;
 
     public void addPoints(){
         if (!gameOver){score = score + 1;}
