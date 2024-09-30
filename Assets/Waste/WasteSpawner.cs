@@ -18,7 +18,7 @@ public class WasteSpawner : MonoBehaviour
     void spawn()
     {
         if (!lm.gameOver){
-            Instantiate(waste[Random.Range(0, waste.Length)], new Vector3(Random.Range(-8f, 8f), 7f, 0f), Quaternion.identity);
+            Instantiate(waste[Random.Range(0, waste.Length)], new Vector3(Random.Range(-8f, 8f), 8f, 0f), Quaternion.identity);
             if (spawnCooldown > 0.5) spawnCooldown -= 0.015f;
             Invoke("spawn", spawnCooldown);
         }
