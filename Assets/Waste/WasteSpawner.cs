@@ -8,7 +8,7 @@ public class WasteSpawner : MonoBehaviour
     public float spawnCooldownStart;
     float spawnCooldown;
     public LogicManager lm;
-    
+
     void Start()
     {
         spawnCooldown = spawnCooldownStart;

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bin : MonoBehaviour
 {
     public LogicManager lm;
+    public GameLostUI glui;
     public GameObject sortedParticle;
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -14,7 +15,10 @@ public class Bin : MonoBehaviour
             Destroy(collision.gameObject);
         } else {
             if (collision.tag == "compost" || collision.tag == "aluminum" || collision.tag == "landfill"){
+                if (!glui.animating){
+                glui.setUI(collision.GetComponent<SpriteRenderer>().sprite, collision.tag, collision.GetComponent<DragAndDrop>().name);
                 lm.gameLost();
+                }
             }
         }
     }
