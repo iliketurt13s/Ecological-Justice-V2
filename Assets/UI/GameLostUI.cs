@@ -11,6 +11,10 @@ public class GameLostUI : MonoBehaviour
     public SpriteRenderer logoImage;
     public TMP_Text wasteName;
 
+    public TMP_Text scoreText;
+    public TMP_Text highScoreText;
+    public LogicManager lm;
+
     public Sprite aluminumLogo;
     public Sprite compostLogo;
     public Sprite landfillLogo;
@@ -21,8 +25,15 @@ public class GameLostUI : MonoBehaviour
 
     void FixedUpdate()
     {
+        scoreText.text = "Score: " + lm.score;
+        if (lm.score >= PlayerPrefs.GetFloat("highscore")){PlayerPrefs.SetFloat("highscore", lm.score);}
+        if (PlayerPrefs.HasKey("highscore")){
+            highScoreText.text = "High Score: " + PlayerPrefs.GetFloat("highscore");
+        } else {
+            highScoreText.text = "No high scores logged";
+        }
         if (animating){
-            float y = Mathf.Lerp(transform.position.x, 0, animationMoveSpeed);
+            float y = Mathf.Lerp(transform.position.y, 0, animationMoveSpeed);
             transform.position = new Vector3(transform.position.x, y, transform.position.x);
 
             float scale = Mathf.Lerp(transform.localScale.x, 1f, animationScaleSpeed);
