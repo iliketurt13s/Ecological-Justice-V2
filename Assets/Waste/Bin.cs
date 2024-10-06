@@ -16,8 +16,8 @@ public class Bin : MonoBehaviour
         } else {
             if (collision.tag == "compost" || collision.tag == "aluminum" || collision.tag == "landfill"){
                 if (!glui.animating){
-                glui.setUI(collision.GetComponent<SpriteRenderer>().sprite, collision.tag, collision.GetComponent<DragAndDrop>().name);
-                lm.gameLost();
+                    glui.setUI(collision.GetComponent<SpriteRenderer>().sprite, collision.tag, collision.GetComponent<DragAndDrop>().wasteName);
+                    lm.gameLost();
                 }
             }
         }
