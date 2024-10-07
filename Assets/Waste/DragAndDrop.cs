@@ -7,7 +7,7 @@ public class DragAndDrop : MonoBehaviour
     bool isDragging = false;
     public float followSpeed;
 
-    public string name;
+    public string wasteName;
 
     void Start(){
         float scaleFactor = Random.Range(-0.05f, 0.05f);
