@@ -19,7 +19,7 @@ public class WasteSpawner : MonoBehaviour
     {
         if (!lm.gameOver){
             Instantiate(waste[Random.Range(0, waste.Length)], new Vector3(Random.Range(-8f, 8f), 8f, 0f), Quaternion.identity);
-            if (spawnCooldown > 1f){spawnCooldown -= 0.015f;}
+            if (spawnCooldown > 1f){spawnCooldown -= 0.025f;}
             else if (spawnCooldown > 0.5f){spawnCooldown -= 0.005f;}
             print(spawnCooldown);
             Invoke("spawn", spawnCooldown);
