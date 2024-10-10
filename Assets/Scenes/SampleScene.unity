@@ -2411,6 +2411,7 @@ MonoBehaviour:
   - {fileID: 5618823720125799494, guid: e366ea9eb17319f43a266e8372a6762e, type: 3}
   - {fileID: 6296015045944249589, guid: c3ed94c44b8f06748bf55af0083ae832, type: 3}
   spawnCooldownStart: 2
+  spawnCooldown: 0
   lm: {fileID: 2092846297}
 --- !u!1 &2126965733
 GameObject:
