@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class DragAndDrop : MonoBehaviour
 {
@@ -10,13 +11,14 @@ public class DragAndDrop : MonoBehaviour
 
     public string wasteName;
 
-    public Transform nameUI;
+    public RectTransform nameUI;
     public TMP_Text nameText;
     public float nameUIScaleSpeed;
 
     void Start(){
         float scaleFactor = Random.Range(-0.05f, 0.05f);
         transform.localScale = new Vector3(transform.localScale.x + scaleFactor, transform.localScale.y + scaleFactor, 1);
+        nameText.text = wasteName;
     }
     
     void Update()
